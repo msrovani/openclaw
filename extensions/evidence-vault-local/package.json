@@ -1,0 +1,24 @@
+{
+  "name": "@openclaw/evidence-vault-local",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Local-first, append-only evidence vault",
+  "type": "module",
+  "dependencies": {
+    "sqlite": "^5.1.1",
+    "sqlite3": "^5.1.7",
+    "fs-extra": "^11.2.0"
+  },
+  "devDependencies": {
+    "openclaw": "workspace:*",
+    "@types/fs-extra": "^11.0.4"
+  },
+  "peerDependencies": {
+    "openclaw": ">=2026.1.26"
+  },
+  "openclaw": {
+    "extensions": [
+      "./index.ts"
+    ]
+  }
+}
