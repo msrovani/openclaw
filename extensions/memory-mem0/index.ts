@@ -67,7 +67,11 @@ const memoryMem0Plugin = {
     );
 
     // Hook: Update session summary during compaction or end of turn
-    api.registerHook("after_agent_compaction", async (ctx: any) => {
+    api.registerHook("after_compaction", async (event: any, ctx: any) => {
+       const mem0 = await getMem0(ctx);
+       if (event.sessionFile) {
+         // Read session file and extract summary for persistence
+       }
        const mem0 = await getMem0(ctx);
        if (ctx.summary) {
          await mem0.updateSessionSummary(ctx.summary);
